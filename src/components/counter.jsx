@@ -24,9 +24,10 @@ const Counter = () => {
     
   }
 
-  const handleIncrement=()=>{
+  const handleIncrement=(productId)=>{
       //console.log('increment')
       setCount(count + 1)
+      console.log('productId=', productId, 'count=', count)
   }
 
   return (
@@ -34,7 +35,7 @@ const Counter = () => {
       {tags.length ===0 && "you need to enter item! "}
       {renderTags()}
       <span className={getBadgerclasses()}>{formCount()}</span>
-      <button  onClick = {handleIncrement} className='btn btn-secondary btn-sm'>Increment</button>
+      <button  onClick = {()=>handleIncrement({id: 1})} className='btn btn-secondary btn-sm'>Increment</button>
     </>
   )
 }
