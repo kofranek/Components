@@ -2,16 +2,20 @@ import React, { useState } from 'react'
 
 const Counter = () => {
   const [count, setCount] = useState(0)
-  const [imageUrl, setImageUrl] = useState('https://picsum.photos/200')
 
   const formCount = () => {
     return count === 0 ? 'Nula' : count
   }
+
   return (
     <>
-      <img src={imageUrl} alt='' />
-      <span>{formCount()}</span>
-      <button>Increment</button>
+      <span
+        style={{ fontSize: '15px', fontWeight: 'bold' }}
+        className='badge bg-primary m-2'
+      >
+        {formCount()}
+      </span>
+      <button className='btn btn-secondary btn-sm'>Increment</button>
     </>
   )
 }
