@@ -7,6 +7,8 @@ const Counter = () => {
     return count === 0 ? 'Nula' : count
   }
 
+  const tags = ['tag1', 'tag2', 'tag3']
+
   const getBadgerclasses = () => {
     let classes = 'badge m-2 bg-'
     classes += count === 0 ? 'danger' : 'primary'
@@ -14,6 +16,9 @@ const Counter = () => {
   }
   return (
     <>
+    {tags.map ((tag)=>(
+       <li key={tag}>{tag}</li>
+    ))}
       <span className={getBadgerclasses()}>{formCount()}</span>
       <button className='btn btn-secondary btn-sm'>Increment</button>
     </>
