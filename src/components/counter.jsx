@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const Counter = () => {
-  const [count, setCount] = useState(1)
+  const [count, setCount] = useState(0)
 
   const formCount = () => {
     return count === 0 ? 'Nula' : count
@@ -14,11 +14,20 @@ const Counter = () => {
     classes += count === 0 ? 'danger' : 'primary'
     return classes
   }
+
+  const renderTags = () => {
+
+    if (tags.length === 0) return "no item"
+    else {
+      return tags.map(tag => <li key={tag}>{tag}</li>)
+    }
+    
+  }
+
   return (
     <>
-    {tags.map ((tag)=>(
-       <li key={tag}>{tag}</li>
-    ))}
+      {tags.length ===0 && "you need to enter item! "}
+      {renderTags()}
       <span className={getBadgerclasses()}>{formCount()}</span>
       <button className='btn btn-secondary btn-sm'>Increment</button>
     </>
